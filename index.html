@@ -1,44 +1,355 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BINBTC8 - 币圈指南测试页</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-            background-color: #f7f9fa;
-            margin: 0;
-        }
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            max-width: 450px;
-        }
-        h1 { color: #f0b90b; margin-bottom: 12px; }
-        p { color: #555; line-height: 1.6; }
-        .tag {
-            display: inline-block;
-            background: #eef2f5;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新手加密货币入门全指南｜三大交易所（币安 / 欧易OKX / Bybit）注册与买币实操 | BINBTC8</title>
+  <meta name="description" content="2026最新加密货币入门指南。详细对比全球三大交易所（币安、欧易OKX、Bybit）的注册流程、专属返佣优惠、C2C买币实操与安全防冻卡技巧。">
+  <link rel="icon" href="https://bin.bnbstatic.com/static/images/common/favicon.ico">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #24292f;
+      --border: #e1e4e8;
+      --sidebar-bg: #f8f9fa;
+      --link: #0366d6;
+      --code-bg: #f6f8fa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #181a20;
+        --text: #eaecef;
+        --border: #2b313a;
+        --sidebar-bg: #1e2329;
+        --link: #58a6ff;
+        --code-bg: #2b313a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .layout {
+      display: flex;
+      max-width: 1380px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+    /* 左侧栏 */
+    .menu-aside {
+      width: 250px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      padding: 24px 16px;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #f0b90b;
+      margin-bottom: 24px;
+    }
+    .menu-list { list-style: none; }
+    .menu-item a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .menu-item.active a, .menu-item a:hover {
+      background: var(--border);
+      text-decoration: none;
+    }
+    /* 正文区 */
+    .content-area {
+      flex: 1;
+      padding: 40px 48px;
+      max-width: 840px;
+      min-width: 0;
+    }
+    .post-header { margin-bottom: 30px; }
+    .post-title { font-size: 1.9rem; line-height: 1.3; margin-bottom: 12px; }
+    .post-meta { font-size: 0.88rem; color: #888; display: flex; gap: 16px; }
+    .post-tags { display: flex; gap: 8px; margin-top: 10px; }
+    .tag {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    /* 三大所并排对比卡片网格 */
+    .exchange-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0 32px;
+    }
+    .ex-card {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .ex-card.featured {
+      border: 2px solid #f0b90b;
+    }
+    .badge-top {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      background: #f0b90b;
+      color: #000;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .ex-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+    .ex-desc { font-size: 0.82rem; color: #666; margin-bottom: 12px; min-height: 38px; }
+    .ex-code {
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      font-family: monospace;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .ex-btn {
+      display: block;
+      text-align: center;
+      padding: 9px 0;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none !important;
+      transition: opacity 0.2s;
+    }
+    .ex-btn:hover { opacity: 0.85; }
+    .btn-binance { background: #f0b90b; color: #000 !important; }
+    .btn-okx { background: #000; color: #fff !important; }
+    .btn-bybit { background: #f7a600; color: #000 !important; }
+    @media (prefers-color-scheme: dark) {
+      .btn-okx { background: #fff; color: #000 !important; }
+      .ex-desc { color: #aaa; }
+      .ex-code { background: rgba(255,255,255,0.08); }
+    }
+    /* 正文内容排版 */
+    .markdown-body h2 {
+      font-size: 1.4rem;
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .markdown-body h3 { font-size: 1.15rem; margin: 22px 0 12px; }
+    .markdown-body p { margin-bottom: 16px; }
+    .markdown-body ul, .markdown-body ol { margin-bottom: 18px; padding-left: 24px; }
+    .markdown-body li { margin-bottom: 6px; }
+    .markdown-body hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+    .callout {
+      background: var(--code-bg);
+      border-left: 4px solid #f0b90b;
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 18px 0;
+    }
+    /* 右侧悬浮目录 */
+    .toc-aside {
+      width: 250px;
+      padding: 40px 16px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+    .toc-title { font-weight: 700; margin-bottom: 12px; color: #888; text-transform: uppercase; }
+    .toc-list { list-style: none; line-height: 1.6; }
+    .toc-list li { margin-bottom: 6px; }
+    /* 移动端适配 */
+    @media (max-width: 1080px) { .toc-aside { display: none; } }
+    @media (max-width: 768px) {
+      .layout { flex-direction: column; }
+      .menu-aside { width: 100%; border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
+      .content-area { padding: 24px 16px; }
+      .exchange-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h1>🎉 BINBTC8 已成功上线！</h1>
-        <p>这是一个基于 GitHub Pages 自动托管的专属站点。</p>
-        <div class="tag">域名：binbtc8.github.io</div>
+
+<div class="layout">
+  <!-- 左侧导航 -->
+  <aside class="menu-aside">
+    <div class="brand-title">🪙 BINBTC8</div>
+    <ul class="menu-list">
+      <li class="menu-item active"><a href="/">首页 / 新手指南</a></li>
+      <li class="menu-item"><a href="#一三大主流交易所特点横向对比">交易所对比</a></li>
+      <li class="menu-item"><a href="#二新手选哪个新手选所核心策略">选所建议</a></li>
+      <li class="menu-item"><a href="#三注册与实名认证手把手流程">注册与KYC</a></li>
+      <li class="menu-item"><a href="#四人民币买币实操通用流程">C2C 买币实操</a></li>
+      <li class="menu-item"><a href="#五出入金防冻卡铁律必看">防冻卡经验</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中间正文 -->
+  <main class="content-area markdown-body">
+    <header class="post-header">
+      <h1 class="post-title">新手加密货币入门全指南｜三大交易所（币安 / 欧易OKX / Bybit）注册与买币实操</h1>
+      <div class="post-meta">
+        <span>更新日期: 2026-10-04</span>
+        <span>阅读时长: 约 6 分钟</span>
+      </div>
+      <div class="post-tags">
+        <span class="tag">币安 Binance</span>
+        <span class="tag">欧易 OKX</span>
+        <span class="tag">Bybit</span>
+        <span class="tag">买币防冻卡</span>
+      </div>
+    </header>
+
+    <p>对于刚准备进入加密货币领域的新人来说，“首选哪个交易所？”“人民币怎么安全买入 USDT？”“如何最大化降低交易手续费？”是核心三要素。</p>
+    <p>本文汇总了全球综合体量排名前列的三大主流平台，提供专属官方返佣与费率优惠通道，并详解买币与出入金防冻卡全流程。</p>
+
+    <!-- 顶部核心三大所卡片 -->
+    <div class="exchange-grid">
+      <!-- 币安 -->
+      <div class="ex-card featured">
+        <div class="badge-top">全球交易量第一</div>
+        <div class="ex-name" style="color: #f0b90b;">Binance 币安</div>
+        <div class="ex-desc">全球最大交易所，深度流动性最佳，适合大资金现货与理财配置。</div>
+        <div class="ex-code">
+          <span>邀请码:</span>
+          <strong>VSM8YXHX</strong>
+        </div>
+        <a class="ex-btn btn-binance" href="https://www.bsmkweb.cc/zh-CN/register?ref=VSM8YXHX" target="_blank" rel="noopener">注册币安 (享20%返佣)</a>
+      </div>
+
+      <!-- 欧易 OKX -->
+      <div class="ex-card">
+        <div class="ex-name">OKX 欧易</div>
+        <div class="ex-desc">国内体验极佳，Web3 钱包功能强大，法币买币与出入金通道顺畅。</div>
+        <div class="ex-code">
+          <span>邀请码:</span>
+          <strong>2198730</strong>
+        </div>
+        <a class="ex-btn btn-okx" href="https://www.mitxcqvwnhj.com/join/2198730" target="_blank" rel="noopener">注册欧易 (领盲盒)</a>
+      </div>
+
+      <!-- Bybit -->
+      <div class="ex-card">
+        <div class="ex-name" style="color: #f7a600;">Bybit</div>
+        <div class="ex-desc">合约与衍生品流动性出众，界面轻快，适合合约交易与新币申购。</div>
+        <div class="ex-code">
+          <span>邀请通道:</span>
+          <strong>RU2025</strong>
+        </div>
+        <a class="ex-btn btn-bybit" href="https://partner.bybit.com/b/RU2025" target="_blank" rel="noopener">注册 Bybit</a>
+      </div>
     </div>
+
+    <hr>
+
+    <h2 id="一三大主流交易所特点横向对比">一、三大主流交易所特点横向对比</h2>
+    <p>主流币圈交易者通常会同时注册 2~3 个交易所，以便在不同平台之间比价、分散资金风险以及使用各自特色功能：</p>
+    <ul>
+      <li><strong>币安（Binance）</strong>：综合实力行业第一，资产储备与安全保障基金（SAFU）雄厚，国内用户支持免翻墙域名直连。</li>
+      <li><strong>欧易（OKX）</strong>：中文本地化与客户端体验极佳，C2C 出入金深度充足，自带的 Web3 多链钱包是交互链上生态的利器。</li>
+      <li><strong>Bybit</strong>：全球衍生品交易增长极快，撮合引擎稳定，适合注重深度与低延迟体验的合约交易者。</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="二新手选哪个新手选所核心策略">二、新手选哪个？新手选所核心策略</h2>
+    <div class="callout">
+      <strong>💡 极简选所建议：</strong><br>
+      • <strong>首选组合</strong>：建议同时开通 <strong>币安 + 欧易</strong> 两个账号。平时通过欧易进行法币出入金与 Web3 交互，使用币安进行主流币现货配置与理财定投。<br>
+      • <strong>进阶操作</strong>：如果有高频衍生品需求或关注海外 Launchpad 打新，可搭配 <strong>Bybit</strong> 备用。
+    </div>
+
+    <hr>
+
+    <h2 id="三注册与实名认证手把手流程">三、注册与实名认证手把手流程</h2>
+    <ol>
+      <li><strong>注册准备</strong>：建议准备一个国际邮箱（如 Outlook、Gmail 或 ProtonMail），避免国内部分邮箱拦截验证邮件。</li>
+      <li><strong>进入注册页</strong>：点击上方卡片链接直达注册页面，系统会自动绑定对应专属优惠码（确保长期享受手续费返还）。</li>
+      <li><strong>实名认证（KYC）</strong>：
+        <ul>
+          <li>中国大陆居民在国家/地区选项中直接选择 <strong>China（中国）</strong>。</li>
+          <li>按照界面提示上传身份证照片，并用手机端完成快速人脸核验。</li>
+          <li>审核全程自动化，一般在 5–15 分钟内即可核验完毕。</li>
+        </ul>
+      </li>
+    </ol>
+
+    <hr>
+
+    <h2 id="四人民币买币实操通用流程">四、人民币买币实操通用流程</h2>
+    <p>各大交易所的法币买币底层逻辑一致，即 <strong>C2C 交易（点对点向认证商家购买稳定币 USDT）</strong>：</p>
+    <ol>
+      <li>打开任意交易所 App 首页 ➔ 点击【快捷买币】或【C2C 买币】。</li>
+      <li>法币币种切换为 <strong>CNY</strong>，选择购买 <strong>USDT</strong>。</li>
+      <li><strong>商家筛选技巧</strong>：优先勾选成单量 1000 笔以上、成单率在 98% 以上的“神盾认证商家”。</li>
+      <li>输入购买金额，点击下单。按照卖家给出的账户使用本人实名银行卡/支付宝转账。</li>
+      <li><strong>付款后点击【我已付款】</strong>，等待商家放币至你的资金账户。</li>
+    </ol>
+    <p>📌 <strong>转账铁律：转账附言中务必留空，严禁填写“USDT、比特币、买币、代币”等任何敏感词！</strong></p>
+
+    <hr>
+
+    <h2 id="五出入金防冻卡铁律必看">五、出入金防冻卡铁律（必看）</h2>
+    <ul>
+      <li>❌ <strong>切勿贪图高价</strong>：出金卖币时，凡是报价明显高于市场价的买家，大概率涉及不合规资金，切勿贪图小利。</li>
+      <li>❌ <strong>不使用主生活卡</strong>：出入金准备单独的二类储蓄卡，专卡专用，杜绝与房贷卡、工资卡、公积金卡混合。</li>
+      <li>❌ <strong>避免快进快出</strong>：收到卖币款项后，不要在几分钟内转走，建议留在卡内正常消费或沉淀 24~48 小时。</li>
+      <li>✅ <strong>优先大所认证通道</strong>：尽量只在币安和 OKX 官方认证商家处进行交易。</li>
+    </ul>
+
+    <hr>
+
+    <!-- 底部转化卡片 -->
+    <div class="exchange-grid" style="margin-top: 36px;">
+      <div class="ex-card">
+        <div class="ex-name" style="color: #f0b90b;">Binance 币安</div>
+        <a class="ex-btn btn-binance" href="https://www.bsmkweb.cc/zh-CN/register?ref=VSM8YXHX" target="_blank" rel="noopener">前往币安注册 ➔</a>
+      </div>
+      <div class="ex-card">
+        <div class="ex-name">OKX 欧易</div>
+        <a class="ex-btn btn-okx" href="https://www.mitxcqvwnhj.com/join/2198730" target="_blank" rel="noopener">前往欧易注册 ➔</a>
+      </div>
+      <div class="ex-card">
+        <div class="ex-name" style="color: #f7a600;">Bybit</div>
+        <a class="ex-btn btn-bybit" href="https://partner.bybit.com/b/RU2025" target="_blank" rel="noopener">前往 Bybit 注册 ➔</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- 右侧目录 -->
+  <aside class="toc-aside">
+    <div class="toc-title">目录导航</div>
+    <ul class="toc-list">
+      <li><a href="#一三大主流交易所特点横向对比">一、交易所特点对比</a></li>
+      <li><a href="#二新手选哪个新手选所核心策略">二、新手选所建议</a></li>
+      <li><a href="#三注册与实名认证手把手流程">三、注册与KYC认证</a></li>
+      <li><a href="#四人民币买币实操通用流程">四、C2C买币实操</a></li>
+      <li><a href="#五出入金防冻卡铁律必看">五、出入金防冻卡铁律</a></li>
+    </ul>
+  </aside>
+</div>
+
 </body>
 </html>
