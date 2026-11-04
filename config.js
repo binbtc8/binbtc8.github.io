@@ -39,7 +39,7 @@ window.SITE_CONFIG = {
     gate: {
       name: "Gate.io 芝麻开门",
       color: "#18c19a",
-      code: "YOUR_GATE_CODE",
+      code: "VlBGB1FW",
       link: "https://www.gate.io/zh/share/vlbgb1fw",
       tag: "百倍山寨币大本营",
       desc: "新币上线速度最快，涵盖极丰富的微市值币种。"
