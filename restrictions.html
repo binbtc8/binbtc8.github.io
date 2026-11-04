@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta name="msvalidate.01" content="3D494A8F7989F3C153BA812B523965C5" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026各大交易所注册限制、KYC 与网络避坑指南 | BINBTC8</title>
+  <meta name="description" content="详细汇总 2026 年币安 Binance、欧易 OKX、Bybit、Gate.io 等主流交易所的地区注册限制、中国大陆身份证 KYC 政策以及网络节点避坑技巧。">
+  <meta name="keywords" content="交易所注册限制,币安KYC,欧易注册地区限制,Bybit节点限制,钓鱼网站避坑">
+  <link rel="canonical" href="https://binbtc8.com/restrictions.html">
+  
+  <!-- Open Graph 社交分享标头 -->
+  <meta property="og:title" content="2026各大交易所注册限制、KYC 与网络避坑指南">
+  <meta property="og:description" content="汇总各大交易所最新 KYC 政策、节点限制与安全防钓鱼陷阱避坑规则。">
+  <meta property="og:type" content="article">
+
+  <link rel="icon" href="https://bin.bnbstatic.com/static/images/common/favicon.ico">
+  
+  <!-- 引入全局配置文件 -->
+  <script src="./config.js"></script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #24292f;
+      --border: #e1e4e8;
+      --sidebar-bg: #f8f9fa;
+      --link: #0366d6;
+      --code-bg: #f6f8fa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #181a20;
+        --text: #eaecef;
+        --border: #2b313a;
+        --sidebar-bg: #1e2329;
+        --link: #58a6ff;
+        --code-bg: #2b313a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .layout {
+      display: flex;
+      max-width: 1380px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+    .menu-aside {
+      width: 250px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      padding: 24px 16px;
+      flex-shrink: 0;
+    }
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #f0b90b;
+      margin-bottom: 24px;
+    }
+    .menu-list { list-style: none; }
+    .menu-item a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .menu-item.active a, .menu-item a:hover {
+      background: var(--border);
+      text-decoration: none;
+    }
+    .content-area {
+      flex: 1;
+      padding: 40px 48px;
+      max-width: 840px;
+      min-width: 0;
+    }
+    .post-header { margin-bottom: 30px; }
+    .post-title { font-size: 1.9rem; line-height: 1.3; margin-bottom: 12px; }
+    .post-meta { font-size: 0.88rem; color: #888; display: flex; gap: 16px; }
+    .post-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .tag {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    
+    .markdown-body h2 {
+      font-size: 1.4rem;
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .markdown-body h3 { font-size: 1.15rem; margin: 22px 0 12px; }
+    .markdown-body p { margin-bottom: 16px; }
+    .markdown-body ul, .markdown-body ol { margin-bottom: 18px; padding-left: 24px; }
+    .markdown-body li { margin-bottom: 6px; }
+    .markdown-body hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+    
+    .callout {
+      background: var(--code-bg);
+      border-left: 4px solid #f0b90b;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .secondary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0 32px;
+    }
+    .ex-card-sm {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ex-card-sm:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    .ex-sm-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .ex-logo {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+    .ex-sm-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .code-tag { font-size: 0.78rem; font-family: monospace; color: #888; }
+    .btn-sm {
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none !important;
+      transition: opacity 0.2s;
+    }
+    .btn-sm:hover { opacity: 0.85; }
+    .btn-binance { background: #f0b90b; color: #000 !important; }
+    .btn-okx { background: #000; color: #fff !important; }
+    .btn-bybit { background: #f7a600; color: #000 !important; }
+    .btn-gate { background: #18c19a; color: #fff !important; }
+
+    .toc-aside {
+      width: 250px;
+      padding: 40px 16px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+    .toc-title { font-weight: 700; margin-bottom: 12px; color: #888; text-transform: uppercase; }
+    .toc-list { list-style: none; line-height: 1.6; }
+    .toc-list li { margin-bottom: 6px; }
+
+    @media (prefers-color-scheme: dark) {
+      .btn-okx { background: #fff; color: #000 !important; }
+      .ex-card-sm { background: rgba(255,255,255,0.03); }
+    }
+
+    @media (max-width: 1080px) { .toc-aside { display: none; } }
+    @media (max-width: 768px) {
+      .layout { flex-direction: column; }
+      .menu-aside { width: 100%; border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
+      .content-area { padding: 24px 16px; }
+      .secondary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+  <!-- 左侧导航 -->
+  <aside class="menu-aside">
+    <div class="brand-title">🪙 BINBTC8</div>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="./index.html">← 返回首页</a></li>
+      <li class="menu-item"><a href="./apple-id.html">港区 Apple ID 教程</a></li>
+      <li class="menu-item"><a href="./c2c-deposit.html">安全出入金与防冻卡</a></li>
+      <li class="menu-item active"><a href="./restrictions.html">交易所限制与避坑</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中间正文 -->
+  <main class="content-area markdown-body">
+    <header class="post-header">
+      <h1 class="post-title">主流交易所注册限制、KYC 实名与网络避坑汇总</h1>
+      <div class="post-meta">
+        <span>更新日期: 2026-11-04</span>
+        <span>阅读时长: 约 6 分钟</span>
+      </div>
+      <div class="post-tags">
+        <span class="tag">交易所 KYC 限制</span>
+        <span class="tag">币安注册限制</span>
+        <span class="tag">欧易网络要求</span>
+        <span class="tag">防钓鱼陷阱</span>
+      </div>
+    </header>
+
+    <p>因全球不同司法管辖区的合规政策要求，各大交易所对于注册用户的网络节点、KYC 实名认证证件支持程度各不相同。以下为您汇总最新政策与实操规避指南。</p>
+
+    <hr>
+
+    <h2 id="一主流交易所限制与KYC汇总表">一、 主流交易所限制与 KYC 汇总表</h2>
+    <ul>
+      <li><strong>Binance 币安</strong>：
+        <ul>
+          <li><strong>KYC 支持</strong>：全面支持中国大陆身份证与护照进行高级实名认证。</li>
+          <li><strong>网络节点</strong>：<b>禁止</b>使用美国、新加坡、日本节点访问；建议选择台湾、韩国、香港节点。</li>
+        </ul>
+      </li>
+      <li><strong>OKX 欧易</strong>：
+        <ul>
+          <li><strong>KYC 支持</strong>：全面支持中国大陆身份证认证。</li>
+          <li><strong>网络节点</strong>：国内用户可直接使用官方免翻墙直连域名；VPN 建议避开美国和加拿大节点。</li>
+        </ul>
+      </li>
+      <li><strong>Bybit</strong>：
+        <ul>
+          <li><strong>KYC 支持</strong>：支持中国大陆身份认证。</li>
+          <li><strong>网络节点</strong>：严格限制美国、新加坡 IP 访问。</li>
+        </ul>
+      </li>
+      <li><strong>Gate.io / Bitget / HTX</strong>：
+        <ul>
+          <li>均全面支持中国大陆身份证认证，对中文节点及国内网络兼容度极好。</li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr>
+
+    <h2 id="二新手三大常见陷阱与防坑秘籍">二、 新手三大常见陷阱与防坑秘籍</h2>
+
+    <h3>1. 误入伪造的“钓鱼交易所”网站</h3>
+    <p>搜索引擎广告位常有黑灰产投放的假冒币安/欧易登录界面，一旦输入账号密码与验证码，资产将被瞬间窃取。<strong>防坑秘籍</strong>：始终通过本站提供的官方直达链接访问，并在登录前仔细核对浏览器地址栏的域名。</p>
+
+    <h3>2. 注册时未绑定返佣邀请码（白白损失手续费）</h3>
+    <p>交易所返佣关系在账号创建后<b>不可补绑</b>。如果不使用邀请码注册，交易时将无法享受最高 20% 的手续费自动返还。<strong>防坑秘籍</strong>：直接点击本站按钮即可自动带入官方最高返佣码。</p>
+
+    <h3>3. 频繁变动 VPN 节点触发安全风控</h3>
+    <p>若登录时节点在短时间内从香港频繁切换至美国或日本，系统会触发异地风控并限制提币 24 小时。<strong>防坑秘籍</strong>：在客户端或浏览器访问时，建议将 VPN 规则设置为固定分流节点。</p>
+
+    <hr>
+
+    <!-- 底部交易所直达推荐 -->
+    <h2 id="三官方合规注册通道">三、 官方合规注册通道</h2>
+    <div class="secondary-grid">
+      <!-- 币安 -->
+      <div class="ex-card-sm">
+        <div>
+          <div class="ex-sm-header">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" class="ex-logo" alt="Binance">
+              <strong style="color: #f0b90b;" data-ex="binance" data-field="name">Binance 币安</strong>
+            </div>
+            <span class="badge-sm">官方免翻墙通道</span>
+          </div>
+          <p class="ex-sm-desc" data-ex="binance" data-field="desc">--</p>
+        </div>
+        <div class="ex-sm-footer">
+          <span class="code-tag">码: <b data-ex="binance" data-field="code">--</b></span>
+          <a class="btn-sm btn-binance" data-ex="binance" data-field="link" target="_blank" rel="noopener">官方直达注册 ➔</a>
+        </div>
+      </div>
+
+      <!-- 欧易 OKX -->
+      <div class="ex-card-sm">
+        <div>
+          <div class="ex-sm-header">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <img src="https://www.okx.com/favicon.ico" class="ex-logo" alt="OKX">
+              <strong data-ex="okx" data-field="name">OKX 欧易</strong>
+            </div>
+            <span class="badge-sm">官方直连通道</span>
+          </div>
+          <p class="ex-sm-desc" data-ex="okx" data-field="desc">--</p>
+        </div>
+        <div class="ex-sm-footer">
+          <span class="code-tag">码: <b data-ex="okx" data-field="code">--</b></span>
+          <a class="btn-sm btn-okx" data-ex="okx" data-field="link" target="_blank" rel="noopener">官方直达注册 ➔</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 右侧目录 -->
+  <aside class="toc-aside">
+    <div class="toc-title">目录导航</div>
+    <ul class="toc-list">
+      <li><a href="#一主流交易所限制与KYC汇总表">一、交易所限制与KYC</a></li>
+      <li><a href="#二新手三大常见陷阱与防坑秘籍">二、三大常见陷阱防坑</a></li>
+      <li><a href="#三官方合规注册通道">三、官方注册通道</a></li>
+    </ul>
+  </aside>
+</div>
+
+<!-- 自动填充脚本 -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.SITE_CONFIG || !window.SITE_CONFIG.exchanges) return;
+    const config = window.SITE_CONFIG.exchanges;
+
+    document.querySelectorAll("[data-ex]").forEach(el => {
+      const exKey = el.getAttribute("data-ex");
+      const field = el.getAttribute("data-field");
+      
+      if (!config[exKey]) return;
+      const data = config[exKey];
+
+      if (field === "link") {
+        el.href = data.link;
+      } else if (field === "code") {
+        el.textContent = data.code;
+      } else if (field === "name") {
+        el.textContent = data.name;
+      } else if (field === "desc") {
+        el.textContent = data.desc;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
