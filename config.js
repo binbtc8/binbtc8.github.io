@@ -55,8 +55,8 @@ window.SITE_CONFIG = {
     htx: {
       name: "HTX 火币",
       color: "#2a70f6",
-      code: "x3pqb223",
-      link: "https://www.htx.net.im/invite/zh-cn/1h?invite_code=x3pqb223",
+      code: "svip2025",
+      link: "https://www.htx.net.im/invite/zh-cn/1h?invite_code=svip2025",
       tag: "老牌交易所",
       desc: "品牌积淀深厚，C2C 出入金快捷，活动奖励丰富。"
     }
