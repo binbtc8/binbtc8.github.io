@@ -4,7 +4,7 @@
   <meta name="msvalidate.01" content="3D494A8F7989F3C153BA812B523965C5" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新手加密货币入门全指南｜主流交易所（币安 / OKX / Bybit / Gate / Bitget / HTX）注册与买币实操 | BINBTC8</title>
+  <title>新手加密货币入门全指南｜三大交易所（币安 / OKX / Bybit / Gate / Bitget / HTX）注册与买币实操 | BINBTC8</title>
   <meta name="description" content="2026最新加密货币入门指南。详细对比全球主流交易所的注册流程、专属返佣优惠、C2C买币实操与安全防冻卡技巧。">
   <link rel="icon" href="https://bin.bnbstatic.com/static/images/common/favicon.ico">
   
@@ -18,7 +18,7 @@
       --border: #e1e4e8;
       --sidebar-bg: #f8f9fa;
       --link: #0366d6;
-      --code-bg: #f6f8fa;
+      --code-bg: #f8fafc;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -27,7 +27,7 @@
         --border: #2b313a;
         --sidebar-bg: #1e2329;
         --link: #58a6ff;
-        --code-bg: #2b313a;
+        --code-bg: #1e232a;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -91,14 +91,15 @@
       border-radius: 4px;
     }
 
-    /* --- 交易所卡片视觉大升级 --- */
-    .featured-grid {
+    /* --- 交易所卡片全宽网格 --- */
+    .exchange-main-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      margin: 24px 0 20px;
+      margin: 24px 0 32px;
     }
-    .ex-card, .ex-card-sm {
+    
+    .ex-card-box {
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -108,146 +109,104 @@
       justify-content: space-between;
       position: relative;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s ease;
     }
-    .ex-card:hover, .ex-card-sm:hover {
+    .ex-card-box:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
-    .featured-gold { 
-      border: 2px solid #f0b90b; 
-      background: linear-gradient(180deg, rgba(240, 185, 11, 0.03) 0%, var(--bg) 100%);
-    }
-    .featured-dark { 
-      border: 2px solid #0052ff; 
-      background: linear-gradient(180deg, rgba(0, 82, 255, 0.03) 0%, var(--bg) 100%);
-    }
-
-    .badge-top {
-      position: absolute;
-      top: -10px;
-      right: 14px;
-      background: #f0b90b;
-      color: #000;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    .badge-top.dark-badge {
-      background: #0052ff;
-      color: #fff;
-    }
+    
     .ex-header-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-    .ex-logo {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      object-fit: contain;
-    }
-    .ex-name { font-size: 1.15rem; font-weight: 700; }
-    .ex-desc { font-size: 0.82rem; color: #666; margin-bottom: 14px; min-height: 38px; }
-    .ex-code-box {
-      background: var(--code-bg);
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 0.82rem;
-      margin-bottom: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: monospace;
+      margin-bottom: 8px;
     }
-    .copy-btn {
-      background: transparent;
-      border: 1px solid var(--border);
+    .ex-title-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ex-logo {
+      width: 24px;
+      height: 24px;
       border-radius: 4px;
+      object-fit: contain;
+    }
+    .ex-name { font-size: 1.15rem; font-weight: 800; }
+    .ex-desc { font-size: 0.82rem; color: #64748b; margin-bottom: 12px; min-height: 38px; }
+
+    .badge-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
       padding: 2px 8px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      color: var(--text);
-      transition: all 0.2s;
+      border-radius: 4px;
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
     }
-    .copy-btn:hover {
-      background: var(--border);
+
+    /* 重点优化：全宽高清晰度邀请码框 */
+    .ex-code-container {
+      background: var(--code-bg) !important;
+      border: 1px dashed #cbd5e1 !important;
+      border-radius: 8px !important;
+      padding: 8px 14px !important;
+      margin-bottom: 14px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
     }
-    .ex-btn {
+    .code-label-text {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .code-val-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      letter-spacing: 1.5px !important; /* 强制间距确保清晰度 */
+      margin-left: 6px;
+    }
+    
+    .copy-action-btn {
+      background: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 6px !important;
+      padding: 3px 10px !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      cursor: pointer !important;
+      transition: all 0.2s !important;
+    }
+    .copy-action-btn:hover {
+      background: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+
+    /* 全宽行动按钮 */
+    .ex-action-btn {
       display: block;
+      width: 100%;
       text-align: center;
       padding: 10px 0;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 700;
       font-size: 0.9rem;
       text-decoration: none !important;
       transition: opacity 0.2s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-    .ex-btn:hover { opacity: 0.85; }
-    .btn-binance { background: #f0b90b; color: #000 !important; }
-    .btn-okx { background: #000; color: #fff !important; }
-
-    /* 次级 4 大平台 2x2 网格 */
-    .secondary-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .ex-card-sm {
-      background: var(--code-bg);
-      border: 1px solid var(--border);
-    }
-    .ex-sm-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .badge-sm {
-      font-size: 0.7rem;
-      background: rgba(0,0,0,0.06);
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #666;
-    }
-    .ex-sm-desc {
-      font-size: 0.8rem;
-      color: #666;
-      margin-bottom: 12px;
-      line-height: 1.4;
-      min-height: 36px;
-    }
-    .ex-sm-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px dashed var(--border);
-      padding-top: 10px;
-    }
-    .code-tag {
-      font-size: 0.78rem;
-      font-family: monospace;
-      color: #888;
-    }
-    .btn-sm {
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-decoration: none !important;
-      transition: opacity 0.2s;
-    }
-    .btn-sm:hover { opacity: 0.85; }
-    .btn-bybit { background: #f7a600; color: #000 !important; }
-    .btn-gate { background: #18c19a; color: #fff !important; }
-    .btn-bitget { background: #00c9c0; color: #000 !important; }
-    .btn-htx { background: #2a70f6; color: #fff !important; }
+    .ex-action-btn:hover { opacity: 0.88; }
+    
+    .btn-dark { background: #000000; color: #ffffff !important; }
+    .btn-binance { background: #f0b90b; color: #000000 !important; }
+    .btn-bybit { background: #f7a600; color: #000000 !important; }
+    .btn-gate { background: #18c19a; color: #ffffff !important; }
+    .btn-bitget { background: #00c9c0; color: #000000 !important; }
+    .btn-htx { background: #2a70f6; color: #ffffff !important; }
 
     /* 正文内容排版 */
     .markdown-body h2 {
@@ -290,31 +249,31 @@
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       color: #fff;
       padding: 8px 18px;
       border-radius: 20px;
       font-size: 0.85rem;
       z-index: 999;
       display: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* 暗黑模式细节修正 */
+    /* 暗黑模式细节支持 */
     @media (prefers-color-scheme: dark) {
-      .btn-okx { background: #fff; color: #000 !important; }
-      .ex-desc, .ex-sm-desc { color: #aaa; }
-      .ex-code-box, .ex-card-sm { background: rgba(255,255,255,0.03); }
-      .badge-sm { background: rgba(255,255,255,0.1); color: #ccc; }
+      .btn-dark { background: #ffffff; color: #000000 !important; }
+      .ex-desc { color: #94a3b8; }
+      .code-val-text { color: #f8fafc !important; }
+      .copy-action-btn { background: #334155 !important; border-color: #475569 !important; color: #f8fafc !important; }
     }
 
-    /* 移动端适配 */
+    /* 移动端自适应 */
     @media (max-width: 1080px) { .toc-aside { display: none; } }
     @media (max-width: 768px) {
       .layout { flex-direction: column; }
       .menu-aside { width: 100%; border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
       .content-area { padding: 24px 16px; }
-      .featured-grid, .secondary-grid { grid-template-columns: 1fr; }
+      .exchange-main-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -326,7 +285,7 @@
     <div class="brand-title">🪙 BINBTC8</div>
     <ul class="menu-list">
       <li class="menu-item active"><a href="/">首页 / 新手指南</a></li>
-      <li class="menu-item"><a href="./apple-id.html">苹果 App Store 教程</a></li>
+      <li class="menu-item"><a href="./apple-id.html">港区 Apple ID 教程</a></li>
       <li class="menu-item"><a href="./c2c-deposit.html">安全出入金与防冻卡</a></li>
       <li class="menu-item"><a href="./restrictions.html">交易所限制与避坑</a></li>
     </ul>
@@ -335,7 +294,7 @@
   <!-- 中间正文 -->
   <main class="content-area markdown-body">
     <header class="post-header">
-      <h1 class="post-title">新手加密货币入门全指南｜主流交易所注册与买币实操</h1>
+      <h1 class="post-title">新手加密货币入门全指南｜两大/六大主流交易所注册与买币实操</h1>
       <div class="post-meta">
         <span>更新日期: 2026-11-04</span>
         <span>阅读时长: 约 8 分钟</span>
@@ -354,120 +313,135 @@
     <p>对于刚准备进入加密货币领域的新人来说，“首选哪个交易所？”“人民币怎么安全买入 USDT？”“如何最大化降低交易手续费？”是核心三要素。</p>
     <p>本文汇总了全球综合体量与口碑排名前列的主流平台，提供专属官方返佣与费率优惠通道，并详解买币与出入金防冻卡全流程。</p>
 
-    <!-- 顶部核心双强大卡片 -->
-    <div class="featured-grid">
-      <!-- 币安 -->
-      <div class="ex-card featured-gold">
-        <div class="badge-top">全球交易量第一</div>
-        <div>
-          <div class="ex-header-row">
-            <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" class="ex-logo" alt="Binance">
-            <div class="ex-name" style="color: #f0b90b;" data-ex="binance" data-field="name">Binance 币安</div>
-          </div>
-          <div class="ex-desc" data-ex="binance" data-field="desc">--</div>
-        </div>
-        <div>
-          <div class="ex-code-box">
-            <span>邀请码: <strong data-ex="binance" data-field="code">--</strong></span>
-            <button class="copy-btn" onclick="copyCode('binance')">复制</button>
-          </div>
-          <a class="ex-btn btn-binance" data-ex="binance" data-field="link" target="_blank" rel="noopener">注册币安 (享20%返佣) ➔</a>
-        </div>
-      </div>
-
+    <!-- 交易所 6 大平台标准化视觉网格 -->
+    <div class="exchange-main-grid">
+      
       <!-- 欧易 OKX -->
-      <div class="ex-card featured-dark">
-        <div class="badge-top dark-badge">Web3 / C2C首选</div>
+      <div class="ex-card-box">
         <div>
           <div class="ex-header-row">
-            <img src="https://www.okx.com/favicon.ico" class="ex-logo" alt="OKX">
-            <div class="ex-name" data-ex="okx" data-field="name">OKX 欧易</div>
-          </div>
-          <div class="ex-desc" data-ex="okx" data-field="desc">--</div>
-        </div>
-        <div>
-          <div class="ex-code-box">
-            <span>邀请码: <strong data-ex="okx" data-field="code">--</strong></span>
-            <button class="copy-btn" onclick="copyCode('okx')">复制</button>
-          </div>
-          <a class="ex-btn btn-okx" data-ex="okx" data-field="link" target="_blank" rel="noopener">注册欧易 (领高额盲盒) ➔</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4 大优质平台 2x2 响应式网格 -->
-    <div class="secondary-grid">
-      <!-- Bybit -->
-      <div class="ex-card-sm">
-        <div>
-          <div class="ex-sm-header">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <img src="https://www.bybit.com/favicon.ico" class="ex-logo" style="width:20px;height:20px;" alt="Bybit">
-              <strong style="color: #f7a600;" data-ex="bybit" data-field="name">Bybit</strong>
+            <div class="ex-title-left">
+              <img src="https://www.okx.com/favicon.ico" class="ex-logo" alt="OKX">
+              <span class="ex-name" data-ex="okx" data-field="name">OKX 欧易</span>
             </div>
-            <span class="badge-sm">合约衍生品</span>
+            <span class="badge-tag">20% 手续费返现</span>
           </div>
-          <p class="ex-sm-desc" data-ex="bybit" data-field="desc">--</p>
+          <p class="ex-desc" data-ex="okx" data-field="desc">--</p>
         </div>
-        <div class="ex-sm-footer">
-          <span class="code-tag">码: <b data-ex="bybit" data-field="code">--</b></span>
-          <a class="btn-sm btn-bybit" data-ex="bybit" data-field="link" target="_blank" rel="noopener">直达注册</a>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="okx" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('okx')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-dark" data-ex="okx" data-field="link" target="_blank" rel="noopener">前往 OKX 欧易 官方注册 ➔</a>
         </div>
       </div>
 
-      <!-- Gate.io -->
-      <div class="ex-card-sm">
+      <!-- 币安 -->
+      <div class="ex-card-box">
         <div>
-          <div class="ex-sm-header">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <img src="https://www.gate.io/favicon.ico" class="ex-logo" style="width:20px;height:20px;" alt="Gate">
-              <strong style="color: #18c19a;" data-ex="gate" data-field="name">Gate.io 芝麻开门</strong>
+          <div class="ex-header-row">
+            <div class="ex-title-left">
+              <img src="https://bin.bnbstatic.com/static/images/common/favicon.ico" class="ex-logo" alt="Binance">
+              <span class="ex-name" style="color:#d97706;" data-ex="binance" data-field="name">币安 Binance</span>
             </div>
-            <span class="badge-sm">山寨新币</span>
+            <span class="badge-tag" style="background:rgba(240,185,11,0.15); color:#b45309;">全球交易量第一</span>
           </div>
-          <p class="ex-sm-desc" data-ex="gate" data-field="desc">--</p>
+          <p class="ex-desc" data-ex="binance" data-field="desc">--</p>
         </div>
-        <div class="ex-sm-footer">
-          <span class="code-tag">码: <b data-ex="gate" data-field="code">--</b></span>
-          <a class="btn-sm btn-gate" data-ex="gate" data-field="link" target="_blank" rel="noopener">直达注册</a>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="binance" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('binance')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-binance" data-ex="binance" data-field="link" target="_blank" rel="noopener">前往 币安 Binance 官方注册 ➔</a>
         </div>
       </div>
 
-      <!-- Bitget -->
-      <div class="ex-card-sm">
+      <!-- 芝麻开门 Gate.io -->
+      <div class="ex-card-box">
         <div>
-          <div class="ex-sm-header">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <img src="https://www.bitget.com/favicon.ico" class="ex-logo" style="width:20px;height:20px;" alt="Bitget">
-              <strong style="color: #00c9c0;" data-ex="bitget" data-field="name">Bitget</strong>
+          <div class="ex-header-row">
+            <div class="ex-title-left">
+              <img src="https://www.gate.io/favicon.ico" class="ex-logo" alt="Gate">
+              <span class="ex-name" style="color:#0d9488;" data-ex="gate" data-field="name">芝麻开门 Gate.io</span>
             </div>
-            <span class="badge-sm">跟单交易</span>
+            <span class="badge-tag" style="background:rgba(24,193,154,0.12); color:#0d9488;">老牌山寨币首选</span>
           </div>
-          <p class="ex-sm-desc" data-ex="bitget" data-field="desc">--</p>
+          <p class="ex-desc" data-ex="gate" data-field="desc">--</p>
         </div>
-        <div class="ex-sm-footer">
-          <span class="code-tag">码: <b data-ex="bitget" data-field="code">--</b></span>
-          <a class="btn-sm btn-bitget" data-ex="bitget" data-field="link" target="_blank" rel="noopener">直达注册</a>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="gate" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('gate')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-dark" data-ex="gate" data-field="link" target="_blank" rel="noopener">前往 芝麻开门 Gate.io 官方注册 ➔</a>
         </div>
       </div>
 
-      <!-- HTX -->
-      <div class="ex-card-sm">
+      <!-- HTX 火币 -->
+      <div class="ex-card-box">
         <div>
-          <div class="ex-sm-header">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <img src="https://www.htx.com/favicon.ico" class="ex-logo" style="width:20px;height:20px;" alt="HTX">
-              <strong style="color: #2a70f6;" data-ex="htx" data-field="name">HTX 火币</strong>
+          <div class="ex-header-row">
+            <div class="ex-title-left">
+              <img src="https://www.htx.com/favicon.ico" class="ex-logo" alt="HTX">
+              <span class="ex-name" style="color:#2563eb;" data-ex="htx" data-field="name">HTX 火币</span>
             </div>
-            <span class="badge-sm">老牌大厂</span>
+            <span class="badge-tag" style="background:rgba(37,99,235,0.1); color:#2563eb;">老牌大厂信誉</span>
           </div>
-          <p class="ex-sm-desc" data-ex="htx" data-field="desc">--</p>
+          <p class="ex-desc" data-ex="htx" data-field="desc">--</p>
         </div>
-        <div class="ex-sm-footer">
-          <span class="code-tag">码: <b data-ex="htx" data-field="code">--</b></span>
-          <a class="btn-sm btn-htx" data-ex="htx" data-field="link" target="_blank" rel="noopener">直达注册</a>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="htx" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('htx')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-dark" data-ex="htx" data-field="link" target="_blank" rel="noopener">前往 HTX 火币 官方注册 ➔</a>
         </div>
       </div>
+
+      <!-- Bitget 交易所 -->
+      <div class="ex-card-box">
+        <div>
+          <div class="ex-header-row">
+            <div class="ex-title-left">
+              <img src="https://www.bitget.com/favicon.ico" class="ex-logo" alt="Bitget">
+              <span class="ex-name" style="color:#0891b2;" data-ex="bitget" data-field="name">Bitget 交易所</span>
+            </div>
+            <span class="badge-tag" style="background:rgba(8,145,178,0.1); color:#0891b2;">跟单与衍生品热门</span>
+          </div>
+          <p class="ex-desc" data-ex="bitget" data-field="desc">--</p>
+        </div>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="bitget" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('bitget')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-dark" data-ex="bitget" data-field="link" target="_blank" rel="noopener">前往 Bitget 交易所 官方注册 ➔</a>
+        </div>
+      </div>
+
+      <!-- Bybit 交易所 -->
+      <div class="ex-card-box">
+        <div>
+          <div class="ex-header-row">
+            <div class="ex-title-left">
+              <img src="https://www.bybit.com/favicon.ico" class="ex-logo" alt="Bybit">
+              <span class="ex-name" style="color:#d97706;" data-ex="bybit" data-field="name">Bybit 交易所</span>
+            </div>
+            <span class="badge-tag" style="background:rgba(247,166,0,0.15); color:#d97706;">衍生品与 Launchpad 热门</span>
+          </div>
+          <p class="ex-desc" data-ex="bybit" data-field="desc">--</p>
+        </div>
+        <div>
+          <div class="ex-code-container">
+            <span class="code-label-text">专属码:<strong class="code-val-text" data-ex="bybit" data-field="code">--</strong></span>
+            <button class="copy-action-btn" onclick="copyCode('bybit')">复制</button>
+          </div>
+          <a class="ex-action-btn btn-dark" data-ex="bybit" data-field="link" target="_blank" rel="noopener">前往 Bybit 交易所 官方注册 ➔</a>
+        </div>
+      </div>
+
     </div>
 
     <hr>
@@ -512,7 +486,7 @@
     <h2 id="四人民币买币实操通用流程">四、人民币买币实操通用流程</h2>
     <p>各大交易所的法币买币底层逻辑一致，即 <strong>C2C 交易（点对点向认证商家购买稳定币 USDT）</strong>：</p>
     <ol>
-      <li>打开任意交易所 App ➔ 点击【快捷买币】或【C2C 买币】。</li>
+      <li>打开任意交易所 App 首页 ➔ 点击【快捷买币】或【C2C 买币】。</li>
       <li>法币币种切换为 <strong>CNY</strong>，选择购买 <strong>USDT</strong>。</li>
       <li><strong>商家筛选技巧</strong>：优先勾选成单量 1000 笔以上、成单率在 98% 以上的“认证商家”。</li>
       <li>输入购买金额，点击下单。按照卖家给出的账户使用本人实名银行卡/支付宝转账。</li>
