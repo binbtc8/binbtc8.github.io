@@ -47,7 +47,7 @@ window.SITE_CONFIG = {
     bitget: {
       name: "Bitget",
       color: "#00f0e6",
-      code: "YOUR_BITGET_CODE",
+      code: "tfzb4605",
       link: "https://partner.bitget.ninja/bg/9nfhnf9j",
       tag: "跟单/跟投首选",
       desc: "跟单交易生态成熟，适合新手一键复制优质策略。"
@@ -55,7 +55,7 @@ window.SITE_CONFIG = {
     htx: {
       name: "HTX 火币",
       color: "#2a70f6",
-      code: "YOUR_HTX_CODE",
+      code: "x3pqb223",
       link: "https://www.htx.net.im/invite/zh-cn/1h?invite_code=x3pqb223",
       tag: "老牌交易所",
       desc: "品牌积淀深厚，C2C 出入金快捷，活动奖励丰富。"
