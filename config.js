@@ -40,7 +40,7 @@ window.SITE_CONFIG = {
       name: "Gate.io 芝麻开门",
       color: "#18c19a",
       code: "YOUR_GATE_CODE",
-      link: "https://www.gate.io/signup/YOUR_GATE_CODE",
+      link: "https://www.gate.io/zh/share/vlbgb1fw",
       tag: "百倍山寨币大本营",
       desc: "新币上线速度最快，涵盖极丰富的微市值币种。"
     },
@@ -48,7 +48,7 @@ window.SITE_CONFIG = {
       name: "Bitget",
       color: "#00f0e6",
       code: "YOUR_BITGET_CODE",
-      link: "https://www.bitget.com/expressly?languageType=0&channelCode=YOUR_BITGET_CODE",
+      link: "https://partner.bitget.ninja/bg/9nfhnf9j",
       tag: "跟单/跟投首选",
       desc: "跟单交易生态成熟，适合新手一键复制优质策略。"
     },
@@ -56,7 +56,7 @@ window.SITE_CONFIG = {
       name: "HTX 火币",
       color: "#2a70f6",
       code: "YOUR_HTX_CODE",
-      link: "https://www.htx.com/invite/zh-cn/1g/YOUR_HTX_CODE",
+      link: "https://www.htx.net.im/invite/zh-cn/1h?invite_code=x3pqb223",
       tag: "老牌交易所",
       desc: "品牌积淀深厚，C2C 出入金快捷，活动奖励丰富。"
     }
