@@ -1,0 +1,285 @@
+:root {
+  --bg: #ffffff;
+  --text: #24292f;
+  --border: #e1e4e8;
+  --sidebar-bg: #f8f9fa;
+  --link: #0366d6;
+  --code-bg: #f8fafc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181a20;
+    --text: #eaecef;
+    --border: #2b313a;
+    --sidebar-bg: #1e2329;
+    --link: #58a6ff;
+    --code-bg: #1e232a;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.layout {
+  display: flex;
+  max-width: 1380px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* --- 左侧导航栏 --- */
+.menu-aside {
+  width: 250px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  flex-shrink: 0;
+}
+
+.brand-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f0b90b;
+  margin-bottom: 24px;
+}
+
+.menu-list { list-style: none; }
+
+.menu-item a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.menu-item.active a, .menu-item a:hover {
+  background: var(--border);
+  text-decoration: none;
+}
+
+/* --- 正文内容区 --- */
+.content-area {
+  flex: 1;
+  padding: 40px 48px;
+  max-width: 840px;
+  min-width: 0;
+}
+
+.post-header { margin-bottom: 30px; }
+.post-title { font-size: 1.9rem; line-height: 1.3; margin-bottom: 12px; }
+.post-meta { font-size: 0.88rem; color: #888; display: flex; gap: 16px; }
+.post-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.tag {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* --- 交易所卡片全宽网格 --- */
+.exchange-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 24px 0 32px;
+}
+
+.ex-card-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.ex-card-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ex-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ex-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ex-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.ex-name { font-size: 1.15rem; font-weight: 800; }
+.ex-desc { font-size: 0.82rem; color: #64748b; margin-bottom: 12px; min-height: 38px; }
+
+.badge-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+/* --- 核心优化：高清晰度全宽邀请码框 --- */
+.ex-code-container {
+  background: var(--code-bg) !important;
+  border: 1px dashed #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  margin-bottom: 14px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.code-label-text { font-size: 0.85rem; color: #64748b; }
+
+.code-val-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: 1.5px !important; /* 强制间距提高识别度 */
+  margin-left: 6px;
+}
+
+.copy-action-btn {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  padding: 3px 10px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.copy-action-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* --- 全宽行动主按钮 --- */
+.ex-action-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ex-action-btn:hover { opacity: 0.88; }
+
+.btn-dark { background: #000000; color: #ffffff !important; }
+.btn-binance { background: #f0b90b; color: #000000 !important; }
+
+/* --- 正文与 Markdown 文章排版 --- */
+.markdown-body h2 {
+  font-size: 1.4rem;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.markdown-body h3 { font-size: 1.15rem; margin: 22px 0 12px; }
+.markdown-body p { margin-bottom: 16px; }
+.markdown-body ul, .markdown-body ol { margin-bottom: 18px; padding-left: 24px; }
+.markdown-body li { margin-bottom: 6px; }
+.markdown-body hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+.callout {
+  background: var(--code-bg);
+  border-left: 4px solid #f0b90b;
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+.callout-warning {
+  border-left-color: #f85149;
+  background: rgba(248, 81, 73, 0.04);
+}
+
+/* --- 右侧目录 --- */
+.toc-aside {
+  width: 250px;
+  padding: 40px 16px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.toc-title { font-weight: 700; margin-bottom: 12px; color: #888; text-transform: uppercase; }
+.toc-list { list-style: none; line-height: 1.6; }
+.toc-list li { margin-bottom: 6px; }
+
+/* --- Toast 弹窗 --- */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.9);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- 暗黑模式与自适应细节 --- */
+@media (prefers-color-scheme: dark) {
+  .btn-dark { background: #ffffff; color: #000000 !important; }
+  .code-val-text { color: #f8fafc !important; }
+  .copy-action-btn {
+    background: #334155 !important;
+    border-color: #475569 !important;
+    color: #f8fafc !important;
+  }
+}
+
+@media (max-width: 1080px) { .toc-aside { display: none; } }
+@media (max-width: 768px) {
+  .layout { flex-direction: column; }
+  .menu-aside { width: 100%; border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
+  .content-area { padding: 24px 16px; }
+  .exchange-main-grid { grid-template-columns: 1fr; }
+}
